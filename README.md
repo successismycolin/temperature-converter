@@ -2,7 +2,7 @@
 This is a front-end application built using HTML, CSS and JavaScript that converts a value in one temperature unit to another.
 
 ***What does the project do?***
-- This project converts temperature values from one unit to another (Celsius to Farhenheit and vice versa).
+- This project converts temperature values from one unit to another (Celsius to Fahrenheit and vice versa).
 - It then displays the result to the user through an interactive interface.
 
 ***Why is the project useful?***
