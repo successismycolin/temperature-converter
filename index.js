@@ -4,9 +4,11 @@ document.getElementById("header1").textContent = "Temperature Converter";
 
 // assigning label text
 const unitSelector = document.getElementById("unitSelector");
-
-console.log(unitSelector.onclick);
-
+const inputTextBox = document.getElementById("inputTemp");
+const convertButton = document.getElementById("convertButton");
+let inputIsValid = false;
+let celsiusValue;
+let fahrenheitValue;
 // tried using if statements to change an element's text content upon clicking the element, which doesn't work
 
 // if (unitSelector.click){
@@ -24,5 +26,22 @@ unitSelector.onclick = function(){
         unitSelector.textContent = "C";
     } else if (unitSelector.textContent == "C"){
         unitSelector.textContent = "F";
+    }
+}
+
+// this is where our calculations will take place
+convertButton.onclick = function(){
+    while (inputIsValid == false) {
+        // alert("Please enter a numberic value.");
+        inputTextBox.placeholder = "Please enter a number.";
+        if (typeof Number(inputTextBox.value) == Number){
+            if (unitSelector.textContent == "F"){
+                fahrenheitValue = Number(inputTextBox.value);
+                celsiusValue = (fahrenheitValue - 32) * 5/9;
+            } else {
+                celsiusValue = Number(inputTextBox.value);
+                fahrenheitValue = (celsiusValue * 9/5) + 32;
+            }
+        }
     }
 }
