@@ -47,11 +47,21 @@ convertButton.onclick = function(){
         if (unitSelector.textContent == "F"){
             fahrenheitValue = Number(inputTextBox.value);
             celsiusValue = (fahrenheitValue - 32) * 5/9;
-            outputDisplay.textContent = celsiusValue + "C";
+            outputDisplay.textContent = celsiusValue.toFixed(1) + "C";
+
+            let outputBox = document.getElementById("outputDisplayBox");
+            outputBox.classList.remove("animate-drop");
+            void outputBox.offsetWidth; // Force reflow
+            outputBox.classList.add("animate-drop");
         } else {
             celsiusValue = Number(inputTextBox.value);
             fahrenheitValue = (celsiusValue * 9/5) + 32;
-            outputDisplay.textContent = fahrenheitValue + "F";
+            outputDisplay.textContent = fahrenheitValue.toFixed(1) + "F";
+
+            let outputBox = document.getElementById("outputDisplayBox");
+            outputBox.classList.remove("animate-drop");
+            void outputBox.offsetWidth; // Force reflow
+            outputBox.classList.add("animate-drop");
         }
     }
 }
