@@ -26,6 +26,10 @@ body{
     background-attachment: fixed;
     background-color: rgb(255, 238, 57);
 }
+/* #inputTemp[placeholder]{
+    font-size: smaller;
+    color:rgb(221, 65, 40)
+} */
 #unitSelector{
     height: 50px;
     width: 50px;
@@ -36,7 +40,7 @@ body{
     font-style: italic;
 }
 #unitSelector:hover{
-    border-color: rgb(228, 228, 228);
+    border-color: rgb(224, 224, 224);
 }
 #convertDiv{
     text-align: center;
@@ -58,15 +62,15 @@ body{
     text-align: center;
     font-size: 25px;
     /* animation-name: dropResult; */
-
-
-    
 }
-.animate-drop {
+#outputDisplayBox.animate-drop{
+    animation: dropResult 300ms both 0s 1 normal ease-out;
+}
+/* .animate-drop {
     animation: dropResult 2s forwards 3s 1 backwards ease-out;
-}
+} */
 
 @keyframes dropResult {
-    from{margin-top: 0px;}
-    to{margin-top: 1000px;}
+    from{opacity: 0%;}
+    to{opacity: 100%;}
 }
